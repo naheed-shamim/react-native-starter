@@ -1,11 +1,18 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { LocalStorage } from './utils/LocalStorageUtil';
+import { LocalStorageKeys } from './utils/constants';
 
 export default class Home extends React.Component {
+  componentDidMount() {}
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Begin Here</Text>
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('ApprovedFoodList')}>
+          <Text>Approved Food List</Text>
+        </TouchableOpacity>
       </View>
     );
   }
